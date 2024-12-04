@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graduation Celebration</title>
+    <style>
+        /* Overall page styling */
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #2c2c2c; /* Dark grey background */
+            color: #ffffff; /* White text for contrast */
+            font-family: Arial, sans-serif;
+            background-image: radial-gradient(circle, black 5%, transparent 5%);
+            background-size: 50px 50px; /* Size of each circle */
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            color: #f4f4f4; /* Light grey text for the title */
+            position: absolute;
+            top: 150px; /* Move the title upwards */
+        }
+
+        #cap {
+            width: 300px; /* Increased size of the icon */
+            height: auto; /* Maintain aspect ratio */
+            cursor: pointer;
+        }
+
+        #message {
+            margin-top: 20px;
+            font-size: 1.8em; /* Slightly larger congratulatory text */
+            color: #ffffff; /* White text for the message */
+            display: none;
+        }
+
+        #sub-message {
+            font-size: 1.2em; /* Smaller text for the secondary message */
+            margin-top: 10px;
+            color: #dcdcdc; /* Light grey for differentiation */
+            text-align: center; /* Center the sub-message */
+        }
+    </style>
+</head>
+<body>
+    <!-- Title of the webpage -->
+    <h1>NO WAY YOU GRADUATED????🎓</h1>
+    <div>
+        <!-- Using the direct URL for the image -->
+        <img id="cap" src="https://cdn-icons-png.flaticon.com/512/2682/2682285.png" alt="Graduation Cap">
+        <p id="message">CONGRATULATIONS STINKY AHHH PIGLET!!!🐽🎉 </p>
+        <p id="sub-message" style="display: none;">I love you. From the best brother ever❤️</p>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script>
+        const cap = document.getElementById('cap');
+        const message = document.getElementById('message');
+        const subMessage = document.getElementById('sub-message');
+
+        cap.addEventListener('click', () => {
+            message.style.display = 'block';
+            subMessage.style.display = 'block'; 
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+        });
+    </script>
+</body>
+</html>
